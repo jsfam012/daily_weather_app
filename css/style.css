@@ -1,0 +1,51 @@
+/* Resets */
+* {
+    font-family: sans-serif;
+}
+
+/* Global Classes */
+.hide {
+    display: none;
+}
+
+/* .text-center {
+    text-align: center;
+} */
+
+.row {
+    display: flex;
+}
+
+.justify-between {
+    background-color: rgb(113, 113, 230);
+    padding: 10px;
+    border-radius: 7px;
+    /* text-align: center; */
+    justify-content: center;
+    font-size: 20px;
+    
+}
+
+.title {
+    color: #ece4e2;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#search-input {
+    margin: 5px;
+    border-radius: 3px;
+    border-color: black;
+    padding: 2px;
+    height: 22px;
+   
+}
+
+#search-btn {
+    background-color: rgb(65, 36, 194);
+    border-radius: 3px;
+    color: white;
+    width: 70px;
+    height:30px;
+    cursor: pointer;
+}
