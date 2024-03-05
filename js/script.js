@@ -5,20 +5,6 @@ var apiKey = '28afe2d5b1bd9dc13c52bb3af017e6f9'
 var currentURL = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=imperial`;
 var forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=atlanta&appid=${apiKey}&units=imperial`;
 
-// $.get(forecastURL)
-//     .then(function(data) {
-//         var blocks = data.list;
-
-//         for (var i = 0; i < blocks.length; i++) {
-//             var blockObj = blocks[i];
-
-//             // Only works with noon time 
-//             if (blockObj.dt_txt.includes('12:00')) {
-//                 // Output an element for each block into the DOM/Window
-//             }   
-//         }
-//     }); 
-
 function getSearchHistory() {
     var rawData = localStorage.getItem('search-history');
     var history = JSON.parse(rawData) || [];
@@ -26,8 +12,16 @@ function getSearchHistory() {
     return history;
 }
 
-function getForecastWeather() {
-    console.log(forecast);
+function getForecastWeather(cityName) {
+    $.get(forecastURL + `&q=${cityName}`)
+        .then(function (data) {
+        // Output the current Weather conditions
+        console.log(data)
+
+
+        // Retrieve the forecast weather
+        return cityName
+        })
 }
 
 function getCurrentForecast() {
@@ -45,11 +39,11 @@ function getCurrentForecast() {
     $.get(currentURL + `&q=${cityName}`)
         .then(function (data) {
         // Output the current Weather conditions
-        
+        console.log(data)
 
 
         // Retrieve the forecast weather
-   
+        return cityName
         })
         .then(getForecastWeather)
 }
