@@ -50,8 +50,3 @@ function getCurrentForecast() {
 
 searchBtn.click(getCurrentForecast);
 
-
-// //example of event delegation at parent level.  all button will output 'clicked'
-// $('.history').on('click', 'button', function() {
-//     console.log('clicked');
-// })
